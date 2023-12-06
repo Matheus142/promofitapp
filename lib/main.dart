@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Promobit Beta 1.0',
+      title: 'Promobit Beta 1.5',
       theme: AppTheme.lightTheme(context),
       initialRoute: SplashScreen.routeName,
       routes: routes,
