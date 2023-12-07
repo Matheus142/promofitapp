@@ -10,7 +10,6 @@ import 'screens/splash/splash_screen.dart';
 import 'screens/products/product_whey.dart';
 import '/models/Product_details.dart'; 
 import 'screens/profile/components/screen_notification.dart';
-import 'screens/profile/components/screen_about_app.dart';
 
 
 // We use name route
