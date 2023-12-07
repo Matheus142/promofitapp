@@ -44,6 +44,6 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 ## Links
 
-- [Wiki](https://github.com/Sans-arch/gamehub/wiki) - Link da Wiki do projeto
+- [Wiki]() - Link da Wiki do projeto
 
 - [Trello]() - Link do Trello
