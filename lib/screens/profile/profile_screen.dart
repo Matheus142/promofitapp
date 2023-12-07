@@ -28,27 +28,6 @@ class ProfileScreen extends StatelessWidget {
               },
             ),
             ProfileMenu(
-              text: "Notificações",
-              icon: "assets/icons/Bell.svg",
-              press: () {
-                // Implemente a lógica desejada para 'Notificações'
-              },
-            ),
-            ProfileMenu(
-              text: "Configurações",
-              icon: "assets/icons/Settings.svg",
-              press: () {
-                // Implemente a lógica desejada para 'Configurações'
-              },
-            ),
-            ProfileMenu(
-              text: "Sobre o Aplicativo",
-              icon: "assets/icons/Question mark.svg",
-              press: () {
-                // Implemente a lógica desejada para 'Sobre o Aplicativo'
-              },
-            ),
-            ProfileMenu(
               text: "Sair",
               icon: "assets/icons/Log out.svg",
               press: () {
