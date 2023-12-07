@@ -1,6 +1,6 @@
-# ![2023-09-11 03 43 42](https://github.com/Matheus142/TCCPROMOFIT/assets/65929544/a70b7909-4a37-4c50-80d3-05bf0387e613)
-
-
+##Desenvolvimento de Aplicativo MOBILE - PROMOFIT
+Aluno:Matheus Ferreira
+Curso:Engenharia de Software - 8 FASE
 
 ## Visão Geral do projeto
 
