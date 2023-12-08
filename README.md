@@ -1,4 +1,6 @@
-
+<div align="center">
+  <img src="assets/images/logo_aplictivo.png" alt="Logo do app">
+</div>
 
 <h1 style="text-align:center">Promofit - o seu Achado Fit! </h1>
 
