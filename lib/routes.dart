@@ -9,8 +9,7 @@ import 'screens/sign_up/sign_up_screen.dart';
 import 'screens/splash/splash_screen.dart';
 import 'screens/products/product_whey.dart';
 import '/models/Product_details.dart'; 
-import 'screens/profile/components/screen_notification.dart';
-
+import 'package:shop_app/screens/profile/Myprofile.dart';
 
 // We use name route
 // All our routes will be available here
@@ -25,5 +24,5 @@ final Map<String, WidgetBuilder> routes = {
   ProductWhey.routeName: (context) => ProductWhey(),
   ProfileScreen.routeName: (context) => const ProfileScreen(),
   ProductsDetailsPage.routeName: (context) => ProductsDetailsPage(),
-  ScreenNotification.routeName:  (context) => ScreenNotification(),
+  MyProfileScreen.routeName: (context) => MyProfileScreen(),
 };
