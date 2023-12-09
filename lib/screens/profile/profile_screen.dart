@@ -22,6 +22,7 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         centerTitle: true, // Centralizar o título
+        automaticallyImplyLeading: false, // Remover a seta de volta
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(vertical: 20),
