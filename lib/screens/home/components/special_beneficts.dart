@@ -9,13 +9,16 @@ class SpecialOffers extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 20.0),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start, // Alinhamento à esquerda
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal:35),
-            child: SectionTitle(
-              title: "💊Suplementos e seus Benefícios💊",
-              press: () {},
+          Align(
+            alignment: Alignment.center, // Centraliza o texto
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 35),
+              child: SectionTitle(
+                title: "💊Suplementos e seus Benefícios💊",
+                press: () {},
+              ),
             ),
           ),
           SizedBox(height: 20),
@@ -24,9 +27,8 @@ class SpecialOffers extends StatelessWidget {
       ),
     );
   }
-}
 
- Widget buildOfferList(BuildContext context) {
+  Widget buildOfferList(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -69,7 +71,7 @@ class SpecialOffers extends StatelessWidget {
           width: 200,
           height: 200,
           child: Hero(
-            tag: image, // Usando a mesma tag para Hero para ambas as imagens
+            tag: image,
             child: Image.asset(
               image,
               fit: BoxFit.cover,
@@ -79,6 +81,7 @@ class SpecialOffers extends StatelessWidget {
       ),
     );
   }
+}
 
 class ImageDetailScreen extends StatelessWidget {
   final String image;
@@ -94,7 +97,7 @@ class ImageDetailScreen extends StatelessWidget {
         },
         child: Center(
           child: Hero(
-            tag: image, // Usando a mesma tag para Hero para ambas as imagens
+            tag: image,
             child: Image.asset(image),
           ),
         ),

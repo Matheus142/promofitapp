@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shop_app/screens/init_screen.dart';
 
 class LoginSuccessScreen extends StatefulWidget {
@@ -13,6 +14,7 @@ class LoginSuccessScreen extends StatefulWidget {
 class _LoginSuccessScreenState extends State<LoginSuccessScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
+  // ignore: unused_field
   late Animation<double> _opacityAnimation;
 
   @override
@@ -20,22 +22,22 @@ class _LoginSuccessScreenState extends State<LoginSuccessScreen>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 500), // Define a duração da animação
+      duration: Duration(milliseconds: 50),
     );
 
     _opacityAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: Curves.easeIn, // Define a curva de animação desejada
+        curve: Curves.easeIn,
       ),
     );
 
-    _animationController.forward(); // Inicia a animação quando a tela é exibida
+    _animationController.forward();
   }
 
   @override
   void dispose() {
-    _animationController.dispose(); // Libera recursos do AnimationController
+    _animationController.dispose();
     super.dispose();
   }
 
@@ -46,39 +48,37 @@ class _LoginSuccessScreenState extends State<LoginSuccessScreen>
         leading: const SizedBox(),
         title: const Text("Sucesso no Login!"),
       ),
-      body: AnimatedOpacity(
-        opacity: _opacityAnimation.value,
-        duration: Duration(milliseconds: 500), // Define a duração da animação
-        curve: Curves.easeIn, // Define a curva de animação desejada
-        child: Column(
-          children: [
-            const SizedBox(height: 16),
-            Image.asset(
-              "assets/images/success.png",
-              height: MediaQuery.of(context).size.height * 0.4, //40%
+      body: Column(
+        children: [
+          const SizedBox(height: 16),
+          Lottie.asset(
+            'assets/images/Animation.json',
+            height: MediaQuery.of(context).size.height * 0.4,
+            animate: true,
+            repeat: false,
+            reverse: false,
+          ),
+          const SizedBox(height: 16),
+          const Text(
+            "Sucesso no Login",
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
             ),
-            const SizedBox(height: 16),
-            const Text(
-              "Sucesso no Login",
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
+          ),
+          const Spacer(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, InitScreen.routeName);
+              },
+              child: const Text("De volta ao Menu"),
             ),
-            const Spacer(),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, InitScreen.routeName);
-                },
-                child: const Text("De volta ao Menu"),
-              ),
-            ),
-            const Spacer(),
-          ],
-        ),
+          ),
+          const Spacer(),
+        ],
       ),
     );
   }
