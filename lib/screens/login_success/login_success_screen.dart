@@ -14,7 +14,6 @@ class LoginSuccessScreen extends StatefulWidget {
 class _LoginSuccessScreenState extends State<LoginSuccessScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
-  // ignore: unused_field
   late Animation<double> _opacityAnimation;
 
   @override
@@ -22,22 +21,22 @@ class _LoginSuccessScreenState extends State<LoginSuccessScreen>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 50),
+      duration: Duration(milliseconds: 8000), // Define a duração da animação
     );
 
-    _opacityAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+    _opacityAnimation = Tween<double>(begin: 10.0, end: 0.0).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: Curves.easeIn,
+        curve: Curves.easeInOut, // Define a curva de animação suave
       ),
     );
 
-    _animationController.forward();
+    _animationController.forward(); // Inicia a animação quando a tela é exibida
   }
 
   @override
   void dispose() {
-    _animationController.dispose();
+    _animationController.dispose(); // Libera recursos do AnimationController
     super.dispose();
   }
 
@@ -55,8 +54,7 @@ class _LoginSuccessScreenState extends State<LoginSuccessScreen>
             'assets/images/Animation.json',
             height: MediaQuery.of(context).size.height * 0.4,
             animate: true,
-            repeat: false,
-            reverse: false,
+            controller: _animationController, // Usa o AnimationController
           ),
           const SizedBox(height: 16),
           const Text(
@@ -72,6 +70,7 @@ class _LoginSuccessScreenState extends State<LoginSuccessScreen>
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: ElevatedButton(
               onPressed: () {
+                _animationController.reset(); // Reinicia a animação
                 Navigator.pushNamed(context, InitScreen.routeName);
               },
               child: const Text("De volta ao Menu"),
