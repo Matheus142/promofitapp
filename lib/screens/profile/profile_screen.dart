@@ -16,12 +16,11 @@ class ProfileScreen extends StatelessWidget {
         title: const Text(
           "Perfil do usuário",
           style: TextStyle(
-            fontSize: 20, // Tamanho da fonte
-            fontWeight: FontWeight.bold, // Negrito
-            // Outros estilos que desejar
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
           ),
         ),
-        centerTitle: true, // Centralizar o título
+        centerTitle: true,
         automaticallyImplyLeading: false, // Remover a seta de volta
       ),
       body: SingleChildScrollView(
