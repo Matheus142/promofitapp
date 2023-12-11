@@ -1,4 +1,3 @@
-// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -26,20 +25,19 @@ class _ProductsDetailsPageState extends State<ProductsDetailsPage> {
     selectedImage = widget.productImages.first;
   }
 
- Future<void> _launchURL() async {
-  const url = 'https://www.amazon.com.br/Max-Titanium-Forma%C3%A7%C3%A3o-Quantidade-Amino%C3%A1cidos/dp/B0BHFGGHDP/ref=asc_df_B0BHFGGHDP/?tag=googleshopp00-20&linkCode=df0&hvadid=405196231621&hvpos=&hvnetw=g&hvrand=13577095741229434362&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9102338&hvtargid=pla-2015859784508&mcid=9785574c13ea31f1bdc4f31ea5c6c7a3&th=17'; // Substitua com o seu URL real
-  try {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
+  Future<void> _launchURL() async {
+    const url = 'https://www.amazon.com.br/Max-Titanium-Forma%C3%A7%C3%A3o-Quantidade-Amino%C3%A1cidos/dp/B0BHFGGHDP/ref=asc_df_B0BHFGGHDP/?tag=googleshopp00-20&linkCode=df0&hvadid=405196231621&hvpos=&hvnetw=g&hvrand=13577095741229434362&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9102338&hvtargid=pla-2015859784508&mcid=9785574c13ea31f1bdc4f31ea5c6c7a3&th=17'; // Substitua pelo seu URL real
+    try {
+      if (await canLaunch(url)) {
+        await launch(url);
+      } else {
+        throw 'Could not launch $url';
+      }
+    } catch (e) {
+      // Handle error
+      print(e);
     }
-  } catch (e) {
-    // Handle error
-    print(e);
   }
-}
-
 
   @override
   Widget build(BuildContext context) {
