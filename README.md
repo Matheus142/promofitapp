@@ -46,6 +46,6 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 ## Links
 
-- [Wiki]() - Link da Wiki do projeto
+- [Wiki](https://github.com/Matheus142/promofitapp/wiki/Informa%C3%A7%C3%B5es-Gerais-do-Projeto) - Link da Wiki do projeto
 
 - [Trello]() - Link do Trello
