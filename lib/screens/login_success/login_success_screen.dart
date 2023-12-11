@@ -58,7 +58,7 @@ class _LoginSuccessScreenState extends State<LoginSuccessScreen>
           ),
           const SizedBox(height: 16),
           const Text(
-            "Sucesso no Login",
+            "Login Efetuado com Sucesso",
             style: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
