@@ -48,4 +48,4 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 - [Wiki](https://github.com/Matheus142/promofitapp/wiki/Informa%C3%A7%C3%B5es-Gerais-do-Projeto) - Link da Wiki do projeto
 
-- [Trello]() - Link do Trello
+- [Trello](https://trello.com/invite/b/LaY3Ooj1/ATTI3e395f5cc05d62fa89b146fc5fe2844c04DF68AD/portfolio-aplicativo-promofit) - Link do Trello
