@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, deprecated_member_use, prefer_const_declarations, duplicate_ignore, library_private_types_in_public_api, use_key_in_widget_constructors, must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
@@ -30,6 +32,7 @@ class _ProductsDetailsPageState extends State<ProductsDetailsPage> {
 
   Future<String> _createBitlyDynamicLink() async {
     final String accessToken = 'bc0432e138fab71c60bb9d30830bfcb1d93e1b8d';
+    // ignore: prefer_const_declarations
     final String amazonLink = 'https://www.maxtitanium.com.br/100-whey-pote-900g/p?idsku=116&utm_source=google&utm_campaign=shopping&utm_medium=cpc&utm_source=v4google&utm_medium=pmax&utm_campaign=[V4][MO][PMA][GOO][GO]+Termogenicos-16275184680&utm_content=PMAX-&utm_term=&adid=&gad_source=1&gclid=CjwKCAiApuCrBhAuEiwA8VJ6Jkqbaiy88iOzrOT-hvBXXTmGQaO1lQ9ZQN2nS3LeTub5Bmi_vm0rdBoCs4MQAvD_BwE';
 
     final response = await http.post(

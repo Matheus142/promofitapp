@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field, prefer_const_constructors, use_super_parameters, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shop_app/screens/init_screen.dart';
