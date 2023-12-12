@@ -6,13 +6,14 @@ import 'dart:convert';
 class ProductsDetailsPage extends StatefulWidget {
   static const String routeName = '/products_details';
 
-  final List<String> productImages = [
+  List<String> productImages = [
+    // Adicione os caminhos das suas imagens aqui
     "assets/images/wheyfrente.png",
     "assets/images/wheycosta.png",
     "assets/images/wheytabela.png",
   ];
 
-  final String productDescription = "Whey Max Titanium de R\$105 por R\$95";
+  String productDescription = "Whey Max Titanium de R\$105 por R\$95";
 
   @override
   _ProductsDetailsPageState createState() => _ProductsDetailsPageState();
@@ -29,7 +30,7 @@ class _ProductsDetailsPageState extends State<ProductsDetailsPage> {
 
   Future<String> _createBitlyDynamicLink() async {
     final String accessToken = 'bc0432e138fab71c60bb9d30830bfcb1d93e1b8d';
-    final String amazonLink = 'https://www.maxtitanium.com.br/100-whey-pote-900g/p?idsku=116&utm_source=google&utm_campaign=shopping&utm_medium=cpc&utm_source=v4google&utm_medium=pmax&utm_campaign=[V4][MO][PMA][GOO][GO]+Termogenicos-16275184680&utm_content=PMAX-&utm_term=&adid=&gad_source=1&gclid=CjwKCAiApuCrBhAuEiwA8VJ6Jkqbaiy88iOzrOT-hvBXXTmGQaO1lQ9ZQN2nS3LeTub5Bmi_vm0rdBoCs4MQAvD_BwE'; // Link específico do produto na Amazon
+    final String amazonLink = 'https://www.maxtitanium.com.br/100-whey-pote-900g/p?idsku=116&utm_source=google&utm_campaign=shopping&utm_medium=cpc&utm_source=v4google&utm_medium=pmax&utm_campaign=[V4][MO][PMA][GOO][GO]+Termogenicos-16275184680&utm_content=PMAX-&utm_term=&adid=&gad_source=1&gclid=CjwKCAiApuCrBhAuEiwA8VJ6Jkqbaiy88iOzrOT-hvBXXTmGQaO1lQ9ZQN2nS3LeTub5Bmi_vm0rdBoCs4MQAvD_BwE';
 
     final response = await http.post(
       Uri.parse('https://api-ssl.bitly.com/v4/shorten'),
@@ -71,6 +72,15 @@ class _ProductsDetailsPageState extends State<ProductsDetailsPage> {
     }
   }
 
+  void _showImageFullScreen(String image) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => FullScreenImage(imageUrl: image),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,46 +89,81 @@ class _ProductsDetailsPageState extends State<ProductsDetailsPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                widget.productDescription,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 16),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          FullScreenImage(imageUrl: selectedImage),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(
+              height: 100,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: widget.productImages.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          selectedImage = widget.productImages[index];
+                        });
+                      },
+                      child: Hero(
+                        tag: 'product_image_$index',
+                        child: Image.asset(
+                          widget.productImages[index],
+                          height: 80,
+                          width: 80,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                   );
                 },
-                child: Hero(
-                  tag: 'product_image',
-                  child: Image.asset(
-                    selectedImage,
-                    fit: BoxFit.cover,
-                    height: 200, // Altura ajustada para a visualização adequada
-                  ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            GestureDetector(
+              onTap: () {
+                _showImageFullScreen(selectedImage);
+              },
+              child: Hero(
+                tag: 'product_image',
+                child: Image.asset(
+                  selectedImage,
+                  fit: BoxFit.cover,
+                  height: 200, // Altura ajustada para a visualização adequada
                 ),
               ),
-              const SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: _openBitlyDynamicLink,
-                child: Text('Clique para validar a oferta'),
+            ),
+            const SizedBox(height: 16),
+            Text(
+              'Descrição da Oferta:',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
               ),
-              const SizedBox(height: 16),
-            ],
-          ),
+            ),
+            const SizedBox(height: 8),
+            Container(
+              padding: EdgeInsets.all(8.0),
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              child: Text(
+                widget.productDescription,
+                style: TextStyle(
+                  fontSize: 14,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: _openBitlyDynamicLink,
+              child: Text('Clique para validar a oferta'),
+            ),
+            const SizedBox(height: 16),
+          ],
         ),
       ),
     );
@@ -143,8 +188,6 @@ class FullScreenImage extends StatelessWidget {
             child: Image.asset(
               imageUrl,
               fit: BoxFit.contain,
-              height:
-                  MediaQuery.of(context).size.height, // Usar toda a altura disponível
             ),
           ),
         ),
