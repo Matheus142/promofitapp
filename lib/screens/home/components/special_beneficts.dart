@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'section_title.dart';
 
 class SpecialOffers extends StatelessWidget {
+  // ignore: use_super_parameters
   const SpecialOffers({Key? key}) : super(key: key);
 
   @override
@@ -21,6 +22,7 @@ class SpecialOffers extends StatelessWidget {
               ),
             ),
           ),
+          // ignore: prefer_const_constructors
           SizedBox(height: 20),
           buildOfferList(context),
         ],
@@ -86,6 +88,7 @@ class SpecialOffers extends StatelessWidget {
 class ImageDetailScreen extends StatelessWidget {
   final String image;
 
+  // ignore: use_super_parameters
   const ImageDetailScreen({Key? key, required this.image}) : super(key: key);
 
   @override

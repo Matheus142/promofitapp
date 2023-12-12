@@ -8,9 +8,11 @@ import '../../../constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class ForgotPassForm extends StatefulWidget {
+  // ignore: use_key_in_widget_constructors
   const ForgotPassForm({Key? key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _ForgotPassFormState createState() => _ForgotPassFormState();
 }
 
@@ -27,6 +29,7 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
           email: email!,
         );
         // Exibe um diálogo ou mensagem informando ao usuário que o link de redefinição foi enviado
+        // ignore: use_build_context_synchronously
         showDialog(
           context: context,
           builder: (BuildContext context) {
@@ -47,6 +50,7 @@ class _ForgotPassFormState extends State<ForgotPassForm> {
           },
         );
       } catch (e) {
+        // ignore: avoid_print
         print('Error: $e');
         // Trate o erro adequadamente, mostrando uma mensagem para o usuário, por exemplo
       }

@@ -3,6 +3,7 @@ import 'package:shop_app/screens/home/home_screen.dart';
 import 'package:shop_app/screens/profile/profile_screen.dart';
 
 class InitScreen extends StatefulWidget {
+  // ignore: use_super_parameters
   const InitScreen({Key? key}) : super(key: key);
 
   static String routeName = "/";
@@ -37,11 +38,15 @@ class _InitScreenState extends State<InitScreen> {
         showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
         items: [
+          // ignore: prefer_const_constructors
           BottomNavigationBarItem(
+            // ignore: prefer_const_constructors
             icon: Icon(Icons.home),
             label: 'Home',
           ),
+          // ignore: prefer_const_constructors
           BottomNavigationBarItem(
+            // ignore: prefer_const_constructors
             icon: Icon(Icons.favorite),
             label: 'Você ainda não tem favoritos',
           ),
@@ -55,6 +60,7 @@ class _InitScreenState extends State<InitScreen> {
                   ),
                 );
               },
+              // ignore: prefer_const_constructors
               child: Icon(Icons.person),
             ),
             label: 'Perfil',

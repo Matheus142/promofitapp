@@ -1,3 +1,5 @@
+// ignore_for_file: use_super_parameters, prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import '../../components/no_account_text.dart';
 import 'components/sign_form.dart';

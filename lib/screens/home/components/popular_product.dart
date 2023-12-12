@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'section_title.dart';
 
 class PopularProducts extends StatelessWidget {
+  // ignore: use_key_in_widget_constructors
   const PopularProducts({Key? key});
 
   @override

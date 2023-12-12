@@ -6,11 +6,13 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfilePic extends StatefulWidget {
+  // ignore: use_super_parameters
   const ProfilePic({
     Key? key,
   }) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _ProfilePicState createState() => _ProfilePicState();
 }
 
@@ -49,11 +51,14 @@ class _ProfilePicState extends State<ProfilePic> {
           String downloadUrl = await uploadTask.ref.getDownloadURL();
 
           // Aqui você pode utilizar o URL da imagem no Firebase Storage
+          // ignore: avoid_print
           print("URL da imagem no Firebase Storage: $downloadUrl");
         } else {
+          // ignore: avoid_print
           print("Usuário não autenticado!");
         }
       } catch (e) {
+        // ignore: avoid_print
         print("Erro ao fazer upload da imagem: $e");
       }
     }
@@ -71,6 +76,7 @@ class _ProfilePicState extends State<ProfilePic> {
           CircleAvatar(
             backgroundImage: _selectedImagePath != null
                 ? Image.file(File(_selectedImagePath!)).image
+                // ignore: prefer_const_constructors
                 : AssetImage("assets/images/profile.png"),
           ),
           Positioned(

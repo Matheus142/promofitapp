@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class RoundedIconBtn extends StatelessWidget {
+  // ignore: use_super_parameters
   const RoundedIconBtn({
     Key? key,
     required this.icon,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '/models/Product_details.dart'; // Importe a página de detalhes do produto
 
+// ignore: use_key_in_widget_constructors
 class ProductWhey extends StatelessWidget {
   static const String routeName = '/product_whey';
 
@@ -9,13 +10,16 @@ class ProductWhey extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        // ignore: prefer_const_constructors
         title: Text('Whey Protein'),
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance.collection('products').snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
+            // ignore: prefer_const_constructors
             return Center(
+              // ignore: prefer_const_constructors
               child: CircularProgressIndicator(),
             );
           }
@@ -25,12 +29,15 @@ class ProductWhey extends StatelessWidget {
             );
           }
           if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+            // ignore: prefer_const_constructors
             return Center(
+              // ignore: prefer_const_constructors
               child: Text('No data available.'),
             );
           }
 
           return GridView.builder(
+            // ignore: prefer_const_constructors
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 8.0,
@@ -61,6 +68,7 @@ class ProductWhey extends StatelessWidget {
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         document['name'], // Nome do produto
+                        // ignore: prefer_const_constructors
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 14.0,

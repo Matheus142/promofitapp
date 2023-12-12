@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../constants.dart';
 
 class ProfileMenu extends StatelessWidget {
+  // ignore: use_super_parameters
   const ProfileMenu({
     Key? key,
     required this.text,
@@ -22,6 +23,7 @@ class ProfileMenu extends StatelessWidget {
           foregroundColor: kPrimaryColor, padding: const EdgeInsets.all(20),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          // ignore: prefer_const_constructors
           backgroundColor: Color.fromARGB(255, 9, 36, 117),
         ),
         onPressed: press,
@@ -29,6 +31,7 @@ class ProfileMenu extends StatelessWidget {
           children: [
             SvgPicture.asset(
               icon,
+              // ignore: deprecated_member_use
               color: kPrimaryColor,
               width: 22,
             ),

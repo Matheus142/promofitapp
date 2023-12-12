@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, deprecated_member_use, prefer_const_declarations, duplicate_ignore, library_private_types_in_public_api, use_key_in_widget_constructors, must_be_immutable
+// ignore_for_file: prefer_const_constructors, deprecated_member_use, prefer_const_declarations, duplicate_ignore, library_private_types_in_public_api, use_key_in_widget_constructors, must_be_immutable, file_names, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';

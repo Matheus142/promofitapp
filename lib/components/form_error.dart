@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class FormError extends StatelessWidget {
+  // ignore: use_super_parameters
   const FormError({
     Key? key,
     required this.errors,

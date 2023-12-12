@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomSurffixIcon extends StatelessWidget {
+  // ignore: use_super_parameters
   const CustomSurffixIcon({
     Key? key,
     required this.svgIcon,
