@@ -15,7 +15,7 @@ class ProductsDetailsPage extends StatefulWidget {
     "assets/images/wheytabela.png",
   ];
 
-  String productDescription = "Whey Max Titanium de R\$105 por R\$95";
+  String productDescription = "Whey Max Titanium de R\$189.90 por R\$130.50 (OBS: preços podem sofrer alteração)";
 
   @override
   _ProductsDetailsPageState createState() => _ProductsDetailsPageState();
