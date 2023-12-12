@@ -21,7 +21,7 @@ class _LoginSuccessScreenState extends State<LoginSuccessScreen>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 8000), // Define a duração da animação
+      duration: Duration(milliseconds: 6000), // Define a duração da animação
     );
 
     _opacityAnimation = Tween<double>(begin: 10.0, end: 0.0).animate(

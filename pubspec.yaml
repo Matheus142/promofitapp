@@ -48,6 +48,7 @@ dependencies:
   test: ^1.24.9
   mockito: ^5.4.3
   lottie: ^2.7.0
+  webview_flutter: ^4.4.2
 
 dev_dependencies:
   flutter_test:
