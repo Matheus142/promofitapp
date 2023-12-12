@@ -37,7 +37,7 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
 * **Front-end:** Flutter (Dart)
 * **Back-end:** Firebase (armazenamento de dados, autenticação)
-* **Banco de dados:** Firebase - Cloud Firestore ou Realtime Database
+* **Banco de dados:** Firebase - Cloud Firestore
 * **Cloud:** Firebase Cloud Plataform
 
 ## Serviços utilizados:
